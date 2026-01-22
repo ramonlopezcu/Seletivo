@@ -1,0 +1,4 @@
+# Dotnet
+bin/
+obj/
+*.db
