@@ -14,6 +14,6 @@ namespace ControleGastos.Backend.Dtos
     {
         public int Id { get; set; }
         public string Descricao { get; set; } = string.Empty;
-        public Finalidade Finalidade { get; set; } // despesa/receita/ambas
+        public Finalidade Finalidade { get; set; } // despesa/receita/ambas importante é tipo enum pra fazer match com o REST
     }
 }
