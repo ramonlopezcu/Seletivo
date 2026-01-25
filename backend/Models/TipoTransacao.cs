@@ -7,7 +7,7 @@
  */
 namespace ControleGastos.Backend.Models;
 
-public enum TipoTransacao
+public enum TipoTransacao  //Olho com o tipo enum que da rolo no Frontend
 {
     Despesa,
     Receita
