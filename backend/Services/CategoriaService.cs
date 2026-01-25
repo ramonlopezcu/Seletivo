@@ -8,7 +8,7 @@
  */
 using ControleGastos.Backend.Dtos;
 using ControleGastos.Backend.Models;
-using ControleGastos.Backend.Data; // Asegúrate que este sea tu namespace del Context
+using ControleGastos.Backend.Data; // Comprovar que este seja o namespace do Context
 using Microsoft.EntityFrameworkCore;
 
 namespace ControleGastos.Backend.Services
@@ -37,7 +37,7 @@ namespace ControleGastos.Backend.Services
             return categoria;
         }
 
-        // SOLUCIÓN AL ERROR: Método Editar
+        // SOLUCIÓN AL ERROR: Método Editar si la categoria en null
         public async Task<Categoria?> EditarAsync(int id, CategoriaDto dto)
         {
             var categoria = await _context.Categorias.FindAsync(id);
@@ -56,7 +56,7 @@ namespace ControleGastos.Backend.Services
             var categoria = await _context.Categorias.FindAsync(id);
             if (categoria == null) return false;
 
-            // No permite eliminar si hay transacciones (Integridad referencial)
+            // No se permite eliminar categoria si hay transacciones (Integridad referencial) porque quedaria huérfana (Fica órfão a transação)
             var emUso = await _context.Transacoes.AnyAsync(t => t.CategoriaId == id);
             if (emUso) return false;
 
