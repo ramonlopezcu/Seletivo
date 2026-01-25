@@ -1,10 +1,10 @@
-# 📊 Sistema de Controle de Residência - Gestão Financeira
+#  Sistema de Controle de Residência - Gestão Financeira
 
 Este projeto foi desenvolvido como uma solução full-stack para o gerenciamento de finanças residenciais, integrando um **Backend em .NET Core (C#)** com um **Frontend em React (TypeScript)**. O sistema permite o controle rigoroso de receitas e despesas vinculadas a pessoas e categorias específicas.
 
 ---
 
-## 🛠️ Arquitetura Técnica
+##  Arquitetura Técnica
 
 ### **Backend (C# / .NET)**
 * **Arquitetura em Camadas**: Implementação do padrão de separação entre `Controller` (entrada), `Service` (lógica de negócio) e `Repository/Context` (acesso a dados).
@@ -18,7 +18,7 @@ Este projeto foi desenvolvido como uma solução full-stack para o gerenciamento
 
 ---
 
-## ⚖️ Regras de Negócio e Requisitos do Exame
+##  Regras de Negócio e Requisitos do Exame
 
 O sistema implementa as seguintes regras fundamentais:
 
@@ -31,7 +31,7 @@ O sistema implementa as seguintes regras fundamentais:
 
 ---
 
-## 📈 Relatórios de Totais
+##  Relatórios de Totais
 
 A tela de **Consulta de Totais** oferece uma visão analítica do sistema:
 * **Visão por Pessoa**: Lista receitas, despesas e o saldo individualizado.
@@ -40,14 +40,19 @@ A tela de **Consulta de Totais** oferece uma visão analítica do sistema:
 
 ---
 
-## 🚀 Instruções de Execução
+##  Instruções de Execução
 
-### **Servidor (Backend)**
-1. Navegue até o diretório do projeto C#.
-2. Execute o comando `dotnet ef database update` para configurar o banco.
-3. Inicie o servidor com `dotnet run`.
+Proyecto de Control de Gastos: API en .NET y Frontend en React. Elaborado por Ramon de Jesus Lopez Suarez 
 
-### **Cliente (Frontend)**
-1. Navegue até a pasta do React.
-2. Instale as dependências com `npm install`.
-3. Inicie a aplicação com `npm run dev`.
+-- IMPORTANTE --
+
+** Execução do Frontend **
+Entre na pasta: cd frontend
+Instale as dependências: npm install
+Inicie o servidor: npm run dev -- --host
+Observação importante: O parâmetro --host foi utilizado para garantir a visibilidade do servidor Vite no navegador e evitar bloqueios de resolução no localhost.
+
+** Execução do Backend **
+Entre na pasta: cd backend
+Execute o projeto: dotnet run
+O backend está configurado para rodar na porta 5000, que é o endereço consumido pelo frontend.
