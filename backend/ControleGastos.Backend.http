@@ -1,6 +1,6 @@
 @ControleGastos.Backend_HostAddress = http://localhost:5000
 
-GET {{ControleGastos.Backend_HostAddress}}/weatherforecast/
+GET {{ControleGastos.Backend_HostAddress}}
 Accept: application/json
 
 ###
