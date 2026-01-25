@@ -16,8 +16,8 @@ namespace ControleGastos.Backend.Models
         public TipoTransacao Tipo { get; set; }
 
         public int CategoriaId { get; set; }
-        public Categoria Categoria { get; set; } = null!;
+        public Categoria Categoria { get; set; } = null!; //Relacionamento con Categoria com maiúscula e singular
         public int PessoaId { get; set; }
-        public Pessoa Pessoa { get; set; } = null!;
+        public Pessoa Pessoa { get; set; } = null!; //Relacionamiento com Pessoa
     }
 }
