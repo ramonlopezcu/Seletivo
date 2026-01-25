@@ -36,7 +36,7 @@ namespace ControleGastos.Backend.Controllers
         [HttpPost]
         public async Task<IActionResult> Criar(TransacaoDto dto)
         {
-            var erro = await _service.CriarAsync(dto); // Valida idade e categoria no Service
+            var erro = await _service.CriarAsync(dto); // Valida idade minor de 18 anos e categoria no Service
             return erro == null ? Ok() : BadRequest(erro);
         }
 
