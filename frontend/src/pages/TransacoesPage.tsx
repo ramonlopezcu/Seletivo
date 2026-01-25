@@ -17,7 +17,7 @@ export default function TransacoesPage() {
   const [personas, setPersonas] = useState<Persona[]>([]);
   const [categorias, setCategorias] = useState<Categoria[]>([]);
 
-  // Estados para o formulário (conforme sua imagem a8dee2)
+  // Estados para o formulário
   const [descricao, setDescricao] = useState('');
   const [valor, setValor] = useState(0);
   const [tipo, setTipo] = useState('despesa');
@@ -54,7 +54,7 @@ export default function TransacoesPage() {
   const handleSalvar = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Mapeamento: Despesa = 0, Receita = 1 (Conforme o Enum do seu C#)
+    // Mapeamento: Despesa = 0, Receita = 1 (Conforme o Enum do C#)
     const tipoNumerico = tipo === 'despesa' ? 0 : 1;
 
     // 1. Validação de Idade (Regra de Negócio)
@@ -64,7 +64,7 @@ export default function TransacoesPage() {
       return;
     }
 
-    // 2. Validação de Categoria vs Tipo (Regra de Negócio conforme sua imagem a8dee2)
+    // 2. Validação de Categoria vs Tipo
     const categoriaSelecionada = categorias.find(c => String(c.id) === String(categoriaId));
     if (categoriaSelecionada) {
       // Se tipo é Despesa (0) mas categoria é exclusiva para Receitas (finalidade 0)
