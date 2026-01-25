@@ -1,11 +1,11 @@
 /**
- * Módulo: Program (Ponto de Entrada da Aplicação)
- * Função: Este é o arquivo principal que inicializa o servidor web. Ele configura o 
- * pipeline de execução da aplicação, onde são registrados os serviços essenciais (CORS 
- * para permitir o acesso do React, Injeção de Dependência para os Services e a 
- * configuração do Banco de Dados SQLite). Além disso, ativa o Swagger para 
- * documentação da API e mapeia as rotas dos controllers, garantindo que o 
- * backend esteja pronto para processar as requisições do frontend.
+ * MÃ³dulo: Program (Ponto de Entrada da AplicaÃ§Ã£o)
+ * FunÃ§Ã£o: Este Ã© o arquivo principal que inicializa o servidor web. Ele configura o 
+ * pipeline de execuÃ§Ã£o da aplicaÃ§Ã£o, onde sÃ£o registrados os serviÃ§os essenciais (CORS 
+ * para permitir o acesso do React, InjeÃ§Ã£o de DependÃªncia para os Services e a 
+ * configuraÃ§Ã£o do Banco de Dados SQLite). AlÃ©m disso, ativa o Swagger para 
+ * documentaÃ§Ã£o da API e mapeia as rotas dos controllers, garantindo que o 
+ * backend esteja pronto para processar as requisiÃ§Ãµes do frontend.
  */
 using ControleGastos.Backend.Data;
 using ControleGastos.Backend.Services;
@@ -13,10 +13,10 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 1. Definir la política
+// 1. Definir la polÃ­tica
 builder.Services.AddCors(options => {
     options.AddPolicy("AllowReact", policy => {
-        policy.WithOrigins("http://localhost:5173") // El puerto de tu React
+        policy.WithOrigins("http://localhost:5173") // Ã‰ a porta do meu React
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
@@ -39,7 +39,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 var app = builder.Build();
 
-app.UseCors("AllowReact"); // Esto debe ir después de app.Build() y antes de MapControllers()
+app.UseCors("AllowReact"); // Esto debe ir despuÃ©s de app.Build() y antes de MapControllers()
 
 // Activar Swagger
 app.UseSwagger();
