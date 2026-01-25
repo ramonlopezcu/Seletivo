@@ -7,7 +7,7 @@
  */
 namespace ControleGastos.Backend.Models
 {
-    public enum Finalidade
+    public enum Finalidade //Muito importante ter em conta que é ENUM porque no Frontend tinha string e da erro
     {
         Receita = 0,
         Despesa = 1,
