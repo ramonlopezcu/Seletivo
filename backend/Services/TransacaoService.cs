@@ -57,12 +57,11 @@ namespace ControleGastos.Backend.Services
                 .FirstOrDefaultAsync();
         }
 
-        // CRIAR
         // Dentro de TransacaoService.cs
         // CRIAR
         public async Task<string?> CriarAsync(TransacaoDto dto)
         {
-            // 1. Usamos o método de validação que você já criou lá embaixo
+            // 1. Usamos o método de validação que já criei lá embaixo
             var erro = await ValidarRegrasAsync(dto);
             if (erro != null) return erro;
 
@@ -76,7 +75,7 @@ namespace ControleGastos.Backend.Services
                 CategoriaId = dto.CategoriaId
             };
 
-            // 3. ADICIONAMOS AO CONTEXTO E SALVAMOS (Isso era o que faltava)
+            // 3. ADICIONAMOS AO CONTEXTO E SALVAMOS 
             try
             {
                 _context.Transacoes.Add(novaTransacao);
@@ -175,10 +174,10 @@ namespace ControleGastos.Backend.Services
             if (pessoa == null)
                 return "Pessoa não encontrada.";
 
-            // REGLA: menores não podem registrar receita
+            // REGLA: menores de 18 não podem registrar receita
             if (pessoa != null && pessoa.Idade < 18 && dto.Tipo == TipoTransacao.Receita)
             {
-                return "Menores de 18 anos só podem registrar DESPESAS."; // Este erro será retornado como BadRequest
+                return "Menores de 18 anos só podem registrar DESPESAS."; // Este erro será retornado como BadRequest com uma mensagem 
             }
 
             // CATEGORIA EXISTS
