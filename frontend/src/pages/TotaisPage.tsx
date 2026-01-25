@@ -1,4 +1,4 @@
-/**
+egundo/**
  * Módulo: TotaisPage (Relatórios Consolidados)
  * Função: Este é o componente de inteligência financeira do sistema. Ele consolida 
  * todos os dados (Pessoas, Categorias e Transações) para gerar relatórios de 
@@ -39,7 +39,7 @@ const TotaisPage = () => {
 
     /**
      * Função auxiliar para calcular saldos.
-     * Mapeamento conforme C#: 0 = Despesa, 1 = Receita.
+     * Mapeamento conforme C#: 0 = Despesa, 1 = Receita. Esto segundo ordem do enum.
      */
     const calcularSaldos = (listaFiltrada: Transacao[]) => {
         const recetas = listaFiltrada
