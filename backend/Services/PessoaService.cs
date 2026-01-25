@@ -91,8 +91,8 @@ namespace ControleGastos.Backend.Services
             if (pessoa == null)
                 return false;
 
-            _context.Transacoes.RemoveRange(pessoa.Transacoes);
-            _context.Pessoas.Remove(pessoa);
+            _context.Transacoes.RemoveRange(pessoa.Transacoes); //Remove as transações primeiro
+            _context.Pessoas.Remove(pessoa);                    //Remove pessoa depois
 
             await _context.SaveChangesAsync();
             return true;
